@@ -22,7 +22,8 @@ public class Ubigeo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ubigeoid;
+    @Column(name = "ubigeoid")
+    private Integer id;
 
     @Column(nullable = false, length = 250)
     private String distrito;
@@ -61,12 +62,12 @@ public class Ubigeo {
 
     // Getters y setters
 
-    public Integer getUbigeoid() {
-        return ubigeoid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUbigeoid(Integer ubigeoid) {
-        this.ubigeoid = ubigeoid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDistrito() {

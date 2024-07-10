@@ -8,4 +8,8 @@ public interface PersonaService {
     List<Persona> findAll();
 
     List<Persona> findById(Integer persona_id);
+
+    Persona save(Persona persona);
+
+    void deleteById(Integer persona_id);
 }

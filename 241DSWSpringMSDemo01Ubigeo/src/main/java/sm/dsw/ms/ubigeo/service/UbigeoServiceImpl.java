@@ -25,5 +25,20 @@ public class UbigeoServiceImpl implements UbigeoService{
     public List<Ubigeo> findAll() {
         return (List<Ubigeo>) ubigeoRepository.findAll();
     }
+
+    @Override
+    public Ubigeo findById(Integer ubigeoid) {
+        return ubigeoRepository.findById(ubigeoid).get();
+    }
+
+    @Override
+    public Ubigeo save(Ubigeo ubigeo) {
+        return ubigeoRepository.save(ubigeo);
+    }
+
+    @Override
+    public void deleteById(Integer ubigeoid) {
+        ubigeoRepository.deleteById(ubigeoid);
+    }
     
 }

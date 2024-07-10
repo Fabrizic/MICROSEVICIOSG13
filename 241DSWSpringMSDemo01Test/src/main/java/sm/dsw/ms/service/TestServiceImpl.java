@@ -24,5 +24,20 @@ public class TestServiceImpl implements TestService{
     public List<Test> findAll() {
         return (List<Test>) testRepository.findAll();
     }
+
+    @Override
+    public Test findById(Integer testid) {
+        return testRepository.findById(testid).get();
+    }
+
+    @Override
+    public Test save(Test test) {
+        return testRepository.save(test);
+    }
+
+    @Override
+    public void deleteById(Integer testid) {
+        testRepository.deleteById(testid);
+    }
     
 }

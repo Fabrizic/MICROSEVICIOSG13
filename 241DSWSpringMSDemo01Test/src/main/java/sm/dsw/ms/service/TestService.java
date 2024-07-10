@@ -13,4 +13,10 @@ import sm.dsw.ms.model.Test;
  */
 public interface TestService {
     List<Test> findAll();
+
+    Test findById(Integer test_id);
+
+    Test save(Test test);
+
+    void deleteById(Integer test_id);
 }

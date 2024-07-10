@@ -13,5 +13,11 @@ import sm.dsw.ms.ubigeo.model.Ubigeo;
  */
 public interface UbigeoService {
     List<Ubigeo> findAll();
+
+    Ubigeo findById(Integer ubigeoid);
+
+    Ubigeo save(Ubigeo ubigeo);
+
+    void deleteById(Integer ubigeoid);
     
 }

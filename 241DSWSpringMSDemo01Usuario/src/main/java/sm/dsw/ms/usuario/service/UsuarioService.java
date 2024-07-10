@@ -19,5 +19,9 @@ public interface UsuarioService {
     List<Usuario> findAll();
 
     List<Usuario> findById(Integer usuario_id);
+
+    Usuario save(Usuario usuario);
+
+    void deleteById(Integer usuario_id);
 }
 

@@ -21,4 +21,14 @@ public class UsuarioServiceImpl implements UsuarioService{
         return usuarioRepository.findAllById(usuario_id);
     }
 
+    @Override
+    public Usuario save(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+
+    @Override
+    public void deleteById(Integer usuario_id) {
+        usuarioRepository.deleteById(usuario_id);
+    }
+
 }
