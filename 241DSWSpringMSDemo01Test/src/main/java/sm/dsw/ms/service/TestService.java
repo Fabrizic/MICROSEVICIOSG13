@@ -14,9 +14,9 @@ import sm.dsw.ms.model.Test;
 public interface TestService {
     List<Test> findAll();
 
-    Test findById(Integer test_id);
+    Test findById(Integer testid);
 
     Test save(Test test);
 
-    void deleteById(Integer test_id);
+    void deleteById(Integer testid);
 }

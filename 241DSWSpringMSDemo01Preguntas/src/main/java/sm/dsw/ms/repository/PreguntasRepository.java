@@ -5,7 +5,5 @@ import sm.dsw.ms.model.Preguntas;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PreguntasRepository extends JpaRepository<Preguntas, Integer>{
-    List<Preguntas> findAllBypreguntaid(Integer preguntaid);
-
-    List<Preguntas> findBypreguntaid(Integer preguntaid);
+    List<Preguntas> findAllById(Integer preguntaid);
 }

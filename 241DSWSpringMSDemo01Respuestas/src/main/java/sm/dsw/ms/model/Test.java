@@ -21,7 +21,7 @@ public class Test {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "test_id")
+    @Column(name = "testid")
     private Integer id;
 
     @Column(length = 255)

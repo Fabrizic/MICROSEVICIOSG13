@@ -36,7 +36,7 @@ public class PreguntasController {
         return ResponseEntity.ok(preguntasService.save(preguntas));
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete/{preguntaid}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
         preguntasService.deleteById(id);
         return ResponseEntity.ok().build();

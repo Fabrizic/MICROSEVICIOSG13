@@ -34,7 +34,7 @@ public class UbigeoController {
         return ResponseEntity.ok(ubigeoService.findAll());
     }
     
-    @GetMapping("/{ubigeoid}")
+    @GetMapping("/${ubigeoid}")
     public ResponseEntity<Ubigeo> getUbigeoById(@PathVariable Integer ubigeoid) {
         Ubigeo ubigeo = ubigeoService.findById(ubigeoid);
         return ResponseEntity.ok().body(ubigeo);
@@ -50,7 +50,7 @@ public class UbigeoController {
         return ResponseEntity.ok(ubigeoService.save(ubigeo));
     }
 
-    @DeleteMapping("/delete/{ubigeoid}")
+    @DeleteMapping("/delete/${ubigeoid}")
     public ResponseEntity<?> deleteUbigeo(@PathVariable Integer ubigeoid) {
         ubigeoService.deleteById(ubigeoid);
         return ResponseEntity.ok().build();

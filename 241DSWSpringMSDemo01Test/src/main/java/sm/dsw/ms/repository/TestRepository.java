@@ -13,5 +13,5 @@ import sm.dsw.ms.model.Test;
  * @author Fabrizio
  */
 public interface TestRepository extends CrudRepository<Test, Integer>{
-    List<Test> findAllBytestid(Long testid);
+    List<Test> findAllById(Long testid);
 }

@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import sm.dsw.ms.model.Respuestas;
 
 public interface RespuestasRepository extends JpaRepository<Respuestas, Integer>{
-    List<Respuestas> findAllByrespuestaid(Integer respuestaid);
+    List<Respuestas> findAllById(Integer respuestaid);
 }

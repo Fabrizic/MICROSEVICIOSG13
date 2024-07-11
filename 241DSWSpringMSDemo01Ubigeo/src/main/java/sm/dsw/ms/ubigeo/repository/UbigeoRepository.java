@@ -16,5 +16,5 @@ import sm.dsw.ms.ubigeo.model.Ubigeo;
  */
 @Repository
 public interface UbigeoRepository extends CrudRepository<Ubigeo, Integer> {
-    List<Ubigeo> findAllByubigeoid(Long ubigeoid);
+    List<Ubigeo> findAllById(Long ubigeoid);
 }
