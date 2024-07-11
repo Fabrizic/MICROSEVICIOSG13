@@ -17,8 +17,19 @@ public class PreguntasServiceImpl implements PreguntasService{
     }
 
     @Override
-    public List<Preguntas> findBypreguntaid(Integer preguntaid) {
-        return preguntasRepository.findAllBypreguntaid(preguntaid);
+    public Preguntas findById(Integer preguntaid) {
+        return preguntasRepository.findById(preguntaid).get();
     }
+
+    @Override
+    public Preguntas save(Preguntas preguntas) {
+        return preguntasRepository.save(preguntas);
+    }
+
+    @Override
+    public void deleteById(Integer preguntaid) {
+        preguntasRepository.deleteById(preguntaid);
+    }
+
 
 }

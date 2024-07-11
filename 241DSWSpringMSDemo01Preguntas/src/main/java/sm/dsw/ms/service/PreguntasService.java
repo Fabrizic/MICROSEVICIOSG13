@@ -6,5 +6,10 @@ import java.util.List;
 public interface PreguntasService {
     List<Preguntas> findAll();
 
-    List<Preguntas> findBypreguntaid(Integer preguntaid);
+    Preguntas findById(Integer preguntaid);
+
+    Preguntas save(Preguntas preguntas);
+
+    void deleteById(Integer preguntaid);
+
 }

@@ -14,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "respuestas")
@@ -21,10 +23,12 @@ public class Respuestas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer respuestaid;
+    @Column(name = "respuestaid")
+    private Integer id;
 
-    @Column(nullable = false)
-    private Integer testid; // Se mantiene como un campo regular, no como una relación FK
+    @ManyToOne
+    @JoinColumn(name = "testid", nullable = false) // Define la columna de clave foránea
+    private Test test; // Cambia el tipo de Integer a Test
 
     @Column(length = 100, nullable = false)
     private String textorespuesta;
@@ -37,27 +41,27 @@ public class Respuestas {
     }
 
     // Constructor con parámetros
-    public Respuestas(Integer testid, String textorespuesta, Integer numerorespuesta) {
-        this.testid = testid;
+    public Respuestas(Test test, String textorespuesta, Integer numerorespuesta) {
+        this.test = test;
         this.textorespuesta = textorespuesta;
         this.numerorespuesta = numerorespuesta;
     }
 
     // Getters y setters
-    public Integer getRespuestaid() {
-        return respuestaid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setRespuestaid(Integer respuestaid) {
-        this.respuestaid = respuestaid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getTestid() {
-        return testid;
+    public Test getTest() {
+        return test;
     }
 
-    public void setTestid(Integer testid) {
-        this.testid = testid;
+    public void setTest(Test test) {
+        this.test = test;
     }
 
     public String getTextorespuesta() {

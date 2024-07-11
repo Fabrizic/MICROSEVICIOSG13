@@ -15,4 +15,20 @@ public class RespuestasServiceImpl implements RespuestasService{
     public List<Respuestas> findAll() {
         return respuestasRepository.findAll();
     }
+
+    @Override
+    public Respuestas findById(Integer id) {
+        return respuestasRepository.findById(id).get();
+    }
+
+    @Override
+    public Respuestas save(Respuestas respuestas) {
+        return respuestasRepository.save(respuestas);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        respuestasRepository.deleteById(id);
+    }
+    
 }

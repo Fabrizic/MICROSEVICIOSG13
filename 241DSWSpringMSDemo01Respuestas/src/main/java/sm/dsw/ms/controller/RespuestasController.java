@@ -20,4 +20,26 @@ public class RespuestasController {
         return ResponseEntity.ok(respuestasService.findAll());
     }
 
+    @GetMapping("/${id}")
+    public ResponseEntity<Respuestas> findById(Integer id){
+        return ResponseEntity.ok(respuestasService.findById(id));
+    }
+
+    @GetMapping("/add")
+    public ResponseEntity<Respuestas> add(Respuestas respuestas){
+        return ResponseEntity.ok(respuestasService.save(respuestas));
+    }
+
+    @GetMapping("/update")
+    public ResponseEntity<Respuestas> update(Respuestas respuestas){
+        return ResponseEntity.ok(respuestasService.save(respuestas));
+    }
+
+    @GetMapping("/delete/${id}")
+    public ResponseEntity<?> deleteById(Integer id){
+        respuestasService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
+
 }

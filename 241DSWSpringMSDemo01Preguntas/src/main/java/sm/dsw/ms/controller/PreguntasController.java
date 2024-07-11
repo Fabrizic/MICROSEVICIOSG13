@@ -21,9 +21,25 @@ public class PreguntasController {
         return ResponseEntity.ok(preguntasService.findAll());
     }
 
-    @GetMapping("/preguntas/{preguntaid}")
-    public ResponseEntity<List<Preguntas>> getPreguntasByPreguntaId(@PathVariable Integer preguntaid) {
-        List<Preguntas> preguntas = preguntasService.findBypreguntaid(preguntaid);
-        return ResponseEntity.ok().body(preguntas);
+    @GetMapping("/{id}")
+    public ResponseEntity<Preguntas> findById(@PathVariable Integer id){
+        return ResponseEntity.ok(preguntasService.findById(id));
     }
+
+    @GetMapping("/add")
+    public ResponseEntity<Preguntas> addPreguntas(Preguntas preguntas) {
+        return ResponseEntity.ok(preguntasService.save(preguntas));
+    }
+
+    @GetMapping("/update")
+    public ResponseEntity<Preguntas> updatePreguntas(Preguntas preguntas) {
+        return ResponseEntity.ok(preguntasService.save(preguntas));
+    }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
+        preguntasService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
 }
